@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="script.js"></script> -->
+    <title>Practice your English</title>
+</head>
+<body>
+    <header class="w-full p-5 bg-red-700 text-center font-bold text-white">
+        <h1>PRACTICE YOUR ENGLISH</h1> 
+    </header>
+    <section class="mt-10 w-3/4 mx-auto">
+        <h2 class="text-3xl text-center">What do you want to practice?</h2>
+        <div class="mt-5 flex justify-center">
+            <button class="bg-blue-300 p-5 rounded-3xl font-bold mx-3" onclick="randomSelection(housePlaces)">House Places</button>
+            <button class="bg-blue-300 p-5 rounded-3xl font-bold mx-3" onclick="randomSelection(kitchenItems)">Kitchen Items</button>
+            <button class="bg-blue-300 p-5 rounded-3xl font-bold mx-3" onclick="randomSelection(colors)">Colors</button>
+            <button class="bg-blue-300 p-5 rounded-3xl font-bold mx-3" onclick="randomSelection(verbs)">Verbs</button>
+            <button class="bg-blue-300 p-5 rounded-3xl font-bold mx-3" >Qualifying adjectives</button>
+            <button class="bg-blue-300 p-5 rounded-3xl font-bold mx-3" onclick="randomSelection(possessive_adjetives)">Possessive adjectives</button>
+            <button class="bg-blue-300 p-5 rounded-3xl font-bold mx-3" >Possessive pronouns</button>
+        </div>
+    </section>
+    <section class="mt-10 w-3/4 mx-auto">
+        <h2 class="text-3xl text-center">Write the word in English</h2>
+        <div class="mt-5 flex flex-col items-center">
+            <div class="flex">
+                <h3 class="text-xl">Meaning: </h3> <p class="ml-1 font-bold text-2xl" id="word">*****</p>
+            </div>
+            <form class="flex mt-5" action="">
+                <input class="bg-blue-100 p-3 rounded-3xl border-black border  shadow-lg" type="text" name="word" id="input-word"/>
+                <button type="button" class="bg-blue-800 text-white p-3 rounded-3xl font-bold mx-3" onclick="checkAnswer()">Check</button>
+            </form>
+            <div class="" id="result"></div>
+        </div>
+    </section>
+
+    <script src="api/houseplaces.json"></script>
+    <script src="api/kitchenitems.json"></script>
+    <script src="api/colors.json"></script>
+    <script src="api/verbs.json"></script>
+    <script src="api/possessive-adjetives.json"></script>
+
+    <script>
+        const wordContent = document.getElementById("word");
+        const result = document.getElementById("result");
+        let randomElement;
+
+        function randomSelection (array) {
+            const randomIndex = Math.floor(Math.random() * array.length);
+            randomElement = array[randomIndex];
+            wordContent.textContent = randomElement.español;
+            result.className = "";
+            result.textContent = "";
+        }
+
+        function checkAnswer(){
+            const rightWord = randomElement.ingles;
+            const input = document.getElementById("input-word");
+            if(rightWord==input.value){
+                result.textContent = "Correct (" + rightWord + ")";
+                result.className = "mt-5 p-5 rounded-xl bg-green-400";
+                console.log("OK")
+            }else{
+                const text = "The right word was "+ rightWord;
+                result.textContent = text;
+                result.className = "mt-5 p-5 rounded-xl bg-red-400";
+            }
+            input.value = "";
+            wordContent.textContent = "*****";
+        }
+    </script>
+
+</body>
+</html>

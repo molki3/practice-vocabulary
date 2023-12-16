@@ -1,0 +1,9 @@
+var possessive_adjetives = [
+    { "ingles": "my", "español": "Esa es --mi-- mchila." },
+    { "ingles": "your", "español": "Es --tu-- casa." },
+    { "ingles": "his", "español": "Él es Luis, mira es --su-- perro." },
+    { "ingles": "her", "español": "Ella es Johana, !mira --su-- vestido!" },
+    { "ingles": "its", "español": "¿Dónde está Cody?, ¿Este es --su-- juguete?" },
+    { "ingles": "our", "español": "Ese es --nuestro-- trabajo" },
+    { "ingles": "their", "español": "Aquí estan, estas son --sus-- calificaciones" }
+]

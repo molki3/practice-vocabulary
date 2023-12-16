@@ -1,0 +1,20 @@
+let housePlaces = [
+    {"ingles": "kitchen", "español": "cocina"},
+    {"ingles": "living room", "español": "sala de estar"},
+    {"ingles": "bedroom", "español": "dormitorio"},
+    {"ingles": "bathroom", "español": "baño"},
+    {"ingles": "dining room", "español": "comedor"},
+    {"ingles": "office", "español": "oficina"},
+    {"ingles": "laundry room", "español": "lavandería"},
+    {"ingles": "garage", "español": "garaje"},
+    {"ingles": "patio", "español": "patio"},
+    {"ingles": "garden", "español": "jardín"},
+    {"ingles": "balcony", "español": "balcón"},
+    {"ingles": "attic", "español": "ático"},
+    {"ingles": "basement", "español": "sótano"},
+    {"ingles": "staircase", "español": "escalera"},
+    {"ingles": "hallway", "español": "pasillo"},
+    {"ingles": "playroom", "español": "sala de juegos"},
+    {"ingles": "library", "español": "biblioteca"},
+    {"ingles": "study", "español": "estudio"}
+]
